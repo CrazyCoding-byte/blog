@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzx.front.mapper.YzxArticlesMapper">
+
+    <select id="showArticlesCount" resultType="com.yzx.front.vo.PieData">
+SELECT  count(1) as `value`,s.sort_name as `name` FROM `yzx_articles`  a
+INNER JOIN yzx_subject s on a.subject_id=s.sort_id
+GROUP BY subject_id
+    </select>
+</mapper>
